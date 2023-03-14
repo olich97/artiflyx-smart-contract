@@ -3,11 +3,8 @@ on:
   push:
 
 jobs:
-  check-and-scan:
+  base-checks:
     runs-on: ubuntu-latest
-    permissions:
-      # required for uploading slither sarif results
-      security-events: write
     steps:
       - uses: actions/checkout@v2
 
@@ -22,7 +19,15 @@ jobs:
 
       - name: Run tests
         run: yarn test
-      
+  
+  code-analysis:
+    runs-on: ubuntu-latest
+    permissions:
+      # required for uploading slither sarif results
+      security-events: write
+    steps:
+      - uses: actions/checkout@v2
+
       - name: Run static analysis with slither
         uses: crytic/slither-action@v0.3.0
         id: slither
