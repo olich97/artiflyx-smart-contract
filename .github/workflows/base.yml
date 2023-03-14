@@ -3,8 +3,11 @@ on:
   push:
 
 jobs:
-  base-checks:
+  check-and-scan:
     runs-on: ubuntu-latest
+    permissions:
+      # required for uploading slither sarif results
+      security-events: write
     steps:
       - uses: actions/checkout@v2
 
@@ -19,37 +22,13 @@ jobs:
 
       - name: Run tests
         run: yarn test
-
+      
       - name: Run static analysis with slither
         uses: crytic/slither-action@v0.3.0
         id: slither
         continue-on-error: true
         with:
-          sarif: results.sarif
-          slither-args: --filter-paths node_modules/
-
-      - name: Upload static anaylisis SARIF output file
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: ${{ steps.slither.outputs.sarif }}
-  
-  code-analysis:
-    runs-on: ubuntu-latest
-    permissions:
-      # required for all workflows
-      security-events: write
-
-      # only required for workflows in private repositories
-      actions: read
-      contents: read
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Run static analysis with slither
-        uses: crytic/slither-action@v0.3.0
-        id: slither
-        continue-on-error: true
-        with:
+          ignore-compile: true
           sarif: results.sarif
           slither-args: --filter-paths node_modules # exclude other contracts (open zeppelin ones)
 
