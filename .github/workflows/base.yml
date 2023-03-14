@@ -1,14 +1,14 @@
-name: Develop
+name: Integration
 on:
   push:
 
 jobs:
-  run:
+  base-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
-      - name: Intall dependencies
+      - name: Install dependencies
         run: yarn install
 
       - name: Compile smart contract
@@ -19,6 +19,18 @@ jobs:
 
       - name: Run tests
         run: yarn test
+  
+  code-analysis:
+    runs-on: ubuntu-latest
+    permissions:
+      # required for all workflows
+      security-events: write
+
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
 
       - name: Run static analysis with slither
         uses: crytic/slither-action@main
