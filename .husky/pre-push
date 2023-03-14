@@ -2,9 +2,9 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 echo "🕺 Permorming linting checks..."
-yarn run lint
+yarn lint
 echo "Your code is beatiful, nice job 👍"
 
 echo "🧪 Testing your ugly code..."
-yarn run test
+yarn test
 echo "All tests passed 🚀"
