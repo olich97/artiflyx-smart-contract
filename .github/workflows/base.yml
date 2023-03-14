@@ -1,0 +1,42 @@
+name: Integration
+on:
+  push:
+
+jobs:
+  base-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Compile smart contract
+        run: yarn compile
+
+      - name: Run linting checks
+        run: yarn lint
+
+      - name: Run tests
+        run: yarn test
+  
+  code-analysis:
+    runs-on: ubuntu-latest
+    permissions:
+      # required for uploading slither sarif results
+      security-events: write
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run static analysis with slither
+        uses: crytic/slither-action@v0.3.0
+        id: slither
+        continue-on-error: true
+        with:
+          sarif: results.sarif
+          slither-args: --filter-paths node_modules # exclude other contracts (open zeppelin ones)
+
+      - name: Upload static anaylisis SARIF output file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: ${{ steps.slither.outputs.sarif }}
