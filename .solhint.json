@@ -4,6 +4,7 @@
   "rules": {
     "func-visibility": ["warn", { "ignoreConstructors": true }],
     "avoid-suicide": "error",
+    "no-global-import": "off",
     "avoid-sha3": "warn",
     "compiler-version": ["error", "^0.8.0"],
     "prettier/prettier": "warn"
