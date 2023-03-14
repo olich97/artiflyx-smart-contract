@@ -1,0 +1,23 @@
+name: Develop
+on:
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Intall dependencies
+        run: yarn install
+
+      - name: Compile smart contract
+        run: yarn compile
+
+      - name: Run linting checks
+        run: yarn lint
+
+      - name: Run tests
+        run: yarn lint
