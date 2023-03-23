@@ -5,7 +5,7 @@ This project aims to demonstrates a basic Hardhat use case with complete CI/CD f
 # Raodmap
 
 Step 1: 
-[x] CI with slither and GitHub Actions 
+- [x] CI with slither and GitHub Actions 
 
 
 # Getting started
