@@ -1,16 +1,12 @@
 # Sample Hardhat Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This project aims to demonstrates a basic Hardhat use case with complete CI/CD flows using Open Zeppelin for smart contracts upgrades, admin actions and contract monitoring. 
 
-Try running some of the following tasks:
+# Raodmap
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
+Step 1: 
+[x] CI with slither and GitHub Actions 
+
 
 # Getting started
 - Install dependencies:
