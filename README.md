@@ -1,4 +1,4 @@
-# Artyflyx Smart Contracts
+# Artiflyx Smart Contracts
 
 This project aims to demonstrates a basic Hardhat use case with complete CI/CD flows using Open Zeppelin for smart contracts upgrades, admin actions and contract monitoring. 
 
