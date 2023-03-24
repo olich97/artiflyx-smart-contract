@@ -2,6 +2,14 @@
 
 This project aims to demonstrates a basic Hardhat use case with complete CI/CD flows using Open Zeppelin for smart contracts upgrades, admin actions and contract monitoring. 
 
+Built ❤️ with: 
+- [Hardhat](https://hardhat.org/)
+- [Rome](https://rome.tools/)
+- [Solhint](https://github.com/protofire/solhint)
+- [Husky](https://typicode.github.io/husky/#/)
+- [Slither](https://github.com/crytic/slither) 
+- [Open Zeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable)
+
 # Roadmap
 
 Step 1: 
