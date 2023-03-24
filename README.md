@@ -2,11 +2,20 @@
 
 This project aims to demonstrates a basic Hardhat use case with complete CI/CD flows using Open Zeppelin for smart contracts upgrades, admin actions and contract monitoring. 
 
-# Raodmap
+# Roadmap
 
 Step 1: 
 - [x] CI with slither and GitHub Actions 
+- [ ] Add Open Zeppelin Defender proposal for deployment and upgrades
 
+Step 2: 
+- [ ] Add smart contract monitoring with Open Zeppelin Sentinel
+- [ ] Add notifications/warinings of critical smart contract events
+- [ ] Automatically pause/unpause contract with Autotasks, in case of weird events
+- [ ] Build smart contracts metrics overview dashboard: events numbers, gas used, upgrades, token created etc.
+
+Step 3: 
+- [ ] Securing minting functionalities with Open Zeppelin Relayer and Autotask
 
 # Getting started
 - Install dependencies:
