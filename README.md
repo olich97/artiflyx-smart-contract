@@ -1,16 +1,29 @@
-# Sample Hardhat Project
+# Artiflyx Smart Contracts
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This project aims to demonstrates a basic Hardhat use case with complete CI/CD flows using Open Zeppelin for smart contracts upgrades, admin actions and contract monitoring. 
 
-Try running some of the following tasks:
+Built ❤️ with: 
+- [Hardhat](https://hardhat.org/)
+- [Rome](https://rome.tools/)
+- [Solhint](https://github.com/protofire/solhint)
+- [Husky](https://typicode.github.io/husky/#/)
+- [Slither](https://github.com/crytic/slither) 
+- [Open Zeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable)
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
+# Roadmap
+
+Step 1: 
+- [x] CI with slither and GitHub Actions 
+- [ ] Add Open Zeppelin Defender proposal for deployment and upgrades
+
+Step 2: 
+- [ ] Add smart contract monitoring with Open Zeppelin Sentinel
+- [ ] Add notifications/warinings of critical smart contract events
+- [ ] Automatically pause/unpause contract with Autotasks, in case of weird events
+- [ ] Build smart contracts metrics overview dashboard: events numbers, gas used, upgrades, token created etc.
+
+Step 3: 
+- [ ] Securing minting functionalities with Open Zeppelin Relayer and Autotask
 
 # Getting started
 - Install dependencies:
